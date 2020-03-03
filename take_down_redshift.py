@@ -1,5 +1,6 @@
 import configparser
 import boto3
+import os
 from launch_redshift import create_clients
 
 
@@ -39,7 +40,7 @@ def main():
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
 
-    ec2, s3, iam, redshift = create_clients(config.get('AWS', 'KEY'), config.get('AWS', 'SECRET'))
+    ec2, s3, iam, redshift = create_clients(os.environ.get('AWS_ACCESS_KEY_DWHADMIN'), os.environ.get('AWS_SECRET_ACCESS_KEY_DWHADMIN'))
 
     aws_cleanup(redshift, iam,
         config.get('CLUSTER', 'DWH_CLUSTER_IDENTIFIER'),

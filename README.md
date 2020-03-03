@@ -145,7 +145,7 @@ The data warehouse is designed using a **star schema** consisting of the followi
 The project consists of the following Python scripts:
 
 1. `launch_redshift.py`
- - When called, this script will instantiate a new IAM role and Redshift cluster based on the parameter configurations specified in the `dwh.cfg` file. Upon building the data warehouse cluster, the script will print to the console the cluster endpoint and IAM role Amazon Resource Name (ARN). These two variables are then added to the `dwh.cfg` file, and the AWS access and secret keys are then removed.  
+ - When called, this script will instantiate a new IAM role and Redshift cluster based on the parameter configurations specified in the `dwh.cfg` file. Upon building the data warehouse cluster, the script will print to the console the cluster endpoint and IAM role Amazon Resource Name (ARN). These two variables are then added to the `dwh.cfg` file.
 
 
 2. `sql_queries.py`
